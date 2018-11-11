@@ -47,7 +47,7 @@ while cap.isOpened():
         if 700 < area < 3000:
             # Add filtered contour to list
             contour_list.append(contour)
-            
+
             (x, y), radius = cv2.minEnclosingCircle(contour)
             center = (int(x), int(y))
             cv2.circle(output, center, 5, (0, 0, 255), -1)
@@ -71,7 +71,7 @@ while cap.isOpened():
             distance = 100
             try:
                 # Calculate distance
-                # (x2−x1)2+(y2−y1)2
+                # (x2−x1)^2+(y2−y1)^2
                 distance = math.sqrt((x2-x1)**2 + (y2-y1)**2)
                 #print("Distance: ", distance)
 
@@ -88,6 +88,7 @@ while cap.isOpened():
 
             try:
                 # Calculate middle point
+                # (x1+x2)/2 & (y1+y2)/2
                 mid_x = int((x1 + x2) / 2)
                 mid_y = int((y1 + y2) / 2)
 
